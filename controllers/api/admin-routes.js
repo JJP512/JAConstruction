@@ -63,8 +63,25 @@ router.post("/login", (req, res) => {
             return;
         }
 
-        res.json({ user: dbAdminData, message: "Log in successful." });
+        req.session.save(() => {
+            req.session.admin_id = dbAdminData.id;
+            req.session.admin_email = dbAdminData.email;
+            req.session.loggedIn = true;
+
+            res.json({ user: dbAdminData, message: "Log in successful." });
+        });
     });
+});
+
+router.post("/logout", (req, res) => {
+    if (req.session.loggedIn) {
+        req.session.destroy(() => {
+            res.status(204).end();
+        });
+    }
+    else {
+        res.status(404).end();
+    }
 });
 
 router.delete("/:id", (req, res) => {
