@@ -45,6 +45,28 @@ router.post("/", (req, res) => {
         });
 });
 
+router.post("/login", (req, res) => {
+    Admin.findOne({
+        where: {
+            email: req.body.email
+        }
+    }).then(dbAdminData => {
+        if (!dbAdminData) {
+            res.status(400).json({ message: "Email Incorrect: Admin not found" });
+            return;
+        }
+        
+        const validPassword = dbAdminData.checkPassword(req.body.password);
+
+        if (!validPassword) {
+            res.status(400).json({ message: "Incorrect Password." });
+            return;
+        }
+
+        res.json({ user: dbAdminData, message: "Log in successful." });
+    });
+});
+
 router.delete("/:id", (req, res) => {
     Admin.destroy({
         where: {
