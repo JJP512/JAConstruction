@@ -1,4 +1,5 @@
 const { Model, DataTypes } = require("sequelize");
+const bcrypt = require("bcrypt");
 const sequelize = require("../config/connection");
 
 class Admin extends Model {}
@@ -28,6 +29,12 @@ Admin.init(
         }
     },
     {
+        hooks: {
+            async beforeCreate(newAdminData) {
+                newAdminData.password = await bcrypt.hash(newAdminData.password, 10);
+                return newAdminData;
+            },
+        },
         sequelize,
         timestamps: false,
         freezeTableName: true,
