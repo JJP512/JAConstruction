@@ -2,7 +2,7 @@ const router = require("express").Router();
 const { Contact } = require("../../models");
 
 router.get("/", (req, res) => {
-    Contact.findAll()
+    Contact.findAll({})
         .then(dbContactData => res.json(dbContactData))
         .catch(err => {
             console.log(err);
