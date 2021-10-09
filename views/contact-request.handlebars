@@ -1,0 +1,30 @@
+<form class="contact-form">
+    <div>
+        <label for="name-contact">Name:</label>
+        <input type="text" id="name-contact" />
+    </div>
+    <div>
+        <label for="email-contact">Email:</label>
+        <input type="text" id="email-contact" />
+    </div>
+    <div>
+        <label for="phone-contact">Phone:</label>
+        <input type="text" id="phone-contact" />
+    </div>
+    <div>
+        <p>Preferred Method of Contact: </p>
+        <label for="email-preferred">Email</label>
+        <input type="radio" id="preferred-email" name="preferred" value="email"/>
+        <label for="phone-preferred">Phone</label>
+        <input type="radio" id="preferred-phone" name="preferred" value="phone"/>
+    </div>
+    <div>
+        <p>How can we help you? :</p>
+        <textarea name="request-text" id="request-text" cols="40" rows="5"></textarea>
+    </div>
+    <div>
+        <button type="submit">Submit</button>
+    </div>
+</form>
+
+<script src="/javascript/contact.js"></script>

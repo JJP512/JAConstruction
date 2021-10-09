@@ -1,7 +1,9 @@
 <button id="logout">Logout</button>
 
-<div>
-    **THIS IS THE CONTACT PAGE**
+
+{{#each contacts}}
+<form class="contact-request">
+    **************************
     <div>
     REQUEST ID: {{id}}
     </div>
@@ -20,7 +22,9 @@
     <div>
     SUBJECT: {{request_text}}
     </div>
-</div>
-
+    <br>
+    <button type="submit" class="delete-btn">Delete</button>
+</form>
+{{/each}}
 
 <script src="/javascript/logout.js"></script>

@@ -6,6 +6,18 @@ router.get("/", (req, res) => {
     res.render("homepage");
 });
 
+router.get("/about-us", (req, res) => {
+    res.render("about");
+});
+
+router.get("/team", (req, res) => {
+    res.render("team");
+});
+
+router.get("/contact-request", (req, res) => {
+    res.render("contact-request");
+});
+
 router.get("/admin/login", (req, res) => {
     if (req.session.loggedIn) {
         res.redirect("/api/contact");
@@ -27,8 +39,13 @@ router.get("/api/contact", (req, res) => {
         ]
     })
     .then(dbContactData => {
-        console.log(dbContactData[0]);
-        res.render("contact", dbContactData[0].get({ plain: true }));
+        const contacts = dbContactData.map(contact => contact.get({ plain: true }));
+        console.log(contacts);
+        if (!req.session.loggedIn) {
+            res.redirect("/admin/login");
+            return;
+        }
+        res.render("contact", { contacts });
     })
     .catch(err => {
         console.log(err);
