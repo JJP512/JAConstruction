@@ -1,7 +1,14 @@
-<button id="logout">Logout</button>
+<div class="contact-container">
+<section class="col-md-12 mt-2">
+    <div class="float-end">
+        <button type="submit" id="logout" class="btn btn-warning">Logout</button>
+        </section>
+    </div>
+
 
 
 {{#each contacts}}
+<div class="contact-container">
 <form class="contact-request">
     **************************
     <div>
@@ -25,6 +32,7 @@
     <br>
     <button type="submit" class="delete-btn">Delete</button>
 </form>
+</div>
 {{/each}}
 
 <script src="/javascript/logout.js"></script>

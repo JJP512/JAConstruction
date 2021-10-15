@@ -1,30 +1,31 @@
-<form class="contact-form">
-    <div>
-        <label for="name-contact">Name:</label>
-        <input type="text" id="name-contact" />
-    </div>
-    <div>
-        <label for="email-contact">Email:</label>
-        <input type="text" id="email-contact" />
-    </div>
-    <div>
-        <label for="phone-contact">Phone:</label>
-        <input type="text" id="phone-contact" />
-    </div>
-    <div>
-        <p>Preferred Method of Contact: </p>
+<div class="container mt-2">
+    <h1>Contact Request Form</h1>
+    <form class="row g-3 contact-form">
+        <section class="col-md-12">
+            <label for="name-contact" class="form-label">Full Name</label>
+            <input type="text" class="form-control" id="name-contact" required>
+        </section>
+        <section class="col-md-8">
+            <label for="email-contact" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email-contact" required>
+        </section>
+        <section class="col-md-4">
+            <label for="phone-contact" class="form-label">Phone Number</label>
+            <input type="text" class="form-control" id="phone-contact" placeholder="+1 (XXX) XXX-XXXX">
+        </section>
+        <section class="col-md-8">Preferred Method of Contact: 
         <label for="email-preferred">Email</label>
         <input type="radio" id="preferred-email" name="preferred" value="email"/>
         <label for="phone-preferred">Phone</label>
-        <input type="radio" id="preferred-phone" name="preferred" value="phone"/>
-    </div>
-    <div>
-        <p>How can we help you? :</p>
-        <textarea name="request-text" id="request-text" cols="40" rows="5"></textarea>
-    </div>
-    <div>
-        <button type="submit">Submit</button>
-    </div>
-</form>
+        <input type="radio" id="preferred-phone" name="preferred" value="phone"></section>
+        <h3 class="col-md-12">
+            <label for="request-text" class="form-label">How can we help you?</label>
+            <textarea class="form-control" id="request-text" rows="5"></textarea>
+        </h3>
+        <section class="col-md-12">
+            <button type="submit" class="btn btn-success">Submit</button>
+        </section>
+    </form>
+</div>
 
 <script src="/javascript/contact.js"></script>
