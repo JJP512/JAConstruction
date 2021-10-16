@@ -1,3 +1,139 @@
-img {
-    width: 25%;
+*,
+*::before,
+*::after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html {
+    position: relative;
+    min-height: 100%;
+  }
+body{
+    background-color:black;
+    margin-bottom: 60px; /* Margin bottom by footer height */
+}
+nav {
+    margin-top: 40px;
+    padding: 24px;
+    text-align: center;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+  }
+nav a {
+  transition: 0.3s ease;
+  background: black;
+  color: white;
+  font-size: 20px;
+  text-decoration: none;
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+  padding: 20px 0;
+  margin: 0 5px;
+  font-size: 17px;
+}
+nav a:hover {
+  border-top: 4px solid white;
+  border-bottom: 4px solid white;
+  padding: 6px 0; 
+}
+footer i{
+  background-color: white;
+  font-size: 36px;
+}
+a{
+  color: inherit;
+  margin-right: 10px;
+}
+.footer {
+position: absolute;
+display: flex;
+text-align: end;
+align-items: center;
+bottom: 0;
+width: 100%;
+height: 40px;
+background-color: #f5f5f5;
+}
+
+h1,
+h2,
+h3,
+section{
+    color: white;
+}
+h3{
+  text-decoration: underline;
+}
+.home-about{
+  font-size: 18px;
+  padding: 70px 0;
+}
+.team i{
+  color: white;
+  padding: 10px;
+  font-size: 54px;
+  margin-top: 40px;
+}
+.social i{
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+hr{
+  margin: 20px 0;
+  border: 3px solid gray;
+}
+.home-sub-container,
+.about-sub-container{
+  text-align: center;
+  margin: 10px;
+  padding: 0px 80px 0px 80px;
+  vertical-align: middle;
+  font-size: 20px;
+}
+.handymen,
+.hard-hats{
+  margin-top: 25px;
+}
+.home-sub-container i{
+  color: white;
+}
+.home-container,
+.team-container,
+.about-container{
+    text-align: center;
+    padding: 25px;
+}
+.home-header,
+.about-header,
+.team-header{
+    margin: auto;
+    font-size: 72px;
+    font-weight: bold;
+    text-decoration-line: underline;
+    color: white;
+}
+.name{
+    font-size: 32px;
+    text-decoration-line: underline;
+}
+.job{
+    font-size: 24px;
+}
+.name,
+.job,
+.about,
+.home-sub-container,
+.about-sub-container{
+    color: #198754;
+}
+.p,
+.about{
+  padding: 0px 80px 0px 80px;
+}
+
+
+
+.contact-container{
+  color: white;
+  padding: 10px;
 }

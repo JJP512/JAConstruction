@@ -1,15 +1,17 @@
-<form class="login-form">
-    <div>
-        <label for="email-login">Email:</label>
-        <input type="text" id="email-login" />
-    </div>
-    <div>
-        <label for="password-login">Password:</label>
-        <input type="password" id="password-login" />
-    </div>
-    <div>
-        <button type="submit">login</button>
-    </div>
-</form>
+<div class="container mt-2">
+    <form class=" col-md-6 login-form">
+        <section class="col-md-4">
+            <label for="email-login">Email</label>
+            <input type="text" class="form-control" id="email-login">
+        </section>
+        <section class="col-md-4">
+            <label for="password-login">Password</label>
+            <input type="password" class="form-control" id="password-login">
+        </section>
+        <section class="col-md-12 mt-2">
+            <button type="submit" class="btn btn-light">Login</button>
+        </section>
+    </form>
+</div>
 
 <script src="/javascript/login.js"></script>
